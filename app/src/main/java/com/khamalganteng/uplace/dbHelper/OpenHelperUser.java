@@ -10,13 +10,14 @@ import android.util.Log;
 import com.khamalganteng.uplace.database.Posting;
 import com.khamalganteng.uplace.database.User;
 
+import java.sql.ResultSet;
 import java.util.LinkedList;
 import java.util.List;
 
 public class OpenHelperUser extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "posting.db";
-    private static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "user.db";
+    private static final int DATABASE_VERSION = 3;
     public static final String TABLE_NAME = "User";
     public static final String COLUMN_ID = "id_user";
     public static final String COLUMN_EMAIL = "email";
@@ -75,25 +76,26 @@ public class OpenHelperUser extends SQLiteOpenHelper {
 
         }
 
-        public User getUser(int id) {
+        public User getUser(String email, String password) {
 
             String query;
 
-            query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ String.valueOf(id);
+            query = "SELECT * FROM " + TABLE_NAME + " WHERE email LIKE '"+ email + "' AND password LIKE '"  + password +"'";
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(query, null);
             User post = new User();
 
-            if (cursor.moveToFirst()) {
-               do {
+            if (cursor.getCount()>0) {
+                cursor.moveToFirst();
                    post.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
                    post.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)));
                    post.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)));
                    post.setNama_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_NAME)));
                    post.setAlamat_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_ADDRESS)));
                    post.setDeskripsi_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_DESC)));
-                   } while (cursor.moveToNext());
+            }else{
+                return null;
             }
         return post;
         }

@@ -66,11 +66,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/Bleedred"
+        android:onClick="klikLogin"
         android:text="Log In"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password"
-        android:textColor="#ffffff"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <TextView
         android:id="@+id/textView4"
