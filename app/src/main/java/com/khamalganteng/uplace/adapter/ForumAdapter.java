@@ -29,11 +29,14 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
 
         public TextView tvJudulPosting;
         public TextView tvIsiPosting;
+        public TextView tvPengiPosting;
+        public TextView tvWaktuPosting;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tvJudulPosting = (TextView) itemView.findViewById(R.id.tvJudulPosting);
             tvIsiPosting = (TextView) itemView.findViewById(R.id.tvIsiPositing);
+            tvPengiPosting = (TextView) itemView.findViewById(R.id.tv_pengirim);
         }
     }
 
@@ -54,6 +57,8 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
         final Posting posting = iPosting.get(position);
         holder.tvJudulPosting.setText(posting.getJudul_POSTING());
         holder.tvIsiPosting.setText(posting.getIsi_POSTING());
+        holder.tvPengiPosting.setText(posting.getNama_USER());
+       // holder.tvWaktuPosting.setText(posting.getWaktu_POSTING());
     }
 
     @Override

@@ -15,5 +15,7 @@ public class SignupActivity extends AppCompatActivity {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.tb_daftar);
         setSupportActionBar(myToolbar);
 
+       // setTitle("Pendaftaran");
+
     }
 }

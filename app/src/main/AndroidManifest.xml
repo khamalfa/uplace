@@ -9,13 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/uplacetheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SignupActivity" android:label="Pendaftaran"
+            android:theme="@style/uplacetheme" />
         <activity android:name=".mainMenu.BeritaActivity" />
         <activity android:name=".mainMenu.ForumActivity" />
         <activity android:name=".mainMenu.CariActivity" />
