@@ -10,17 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".mainMenu.BeritaActivity" />
-        <activity android:name=".mainMenu.ForumActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".mainMenu.BeritaActivity" />
+        <activity android:name=".mainMenu.ForumActivity" />
         <activity android:name=".mainMenu.CariActivity" />
-        <activity android:name=".mainMenu.DanaSayaActivity" />
+        <activity android:name=".mainMenu.DanaSayaActivity"></activity>
     </application>
 
 </manifest>
