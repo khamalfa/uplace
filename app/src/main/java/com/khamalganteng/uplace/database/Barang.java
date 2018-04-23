@@ -2,10 +2,10 @@ package com.khamalganteng.uplace.database;
 
 public class Barang {
 
-    int id_BARANG;
-    int id_USER;
-    String nama_BARANG;
-    String deskripsi_BARANG;
+    private int id_BARANG;
+    private int id_USER;
+    private String nama_BARANG;
+    private String deskripsi_BARANG;
 
     public Barang() {
     }

@@ -1,20 +1,22 @@
 package com.khamalganteng.uplace.database;
 
 public class User {
-    int id;
-    String username;
-    String password;
-    String nama_UMKM;
-    String deskripsi_UMKM;
-    String alamat_UMKM;
+    private int id;
+    private String username;
+    private String password;
+    private String email;
+    private String nama_UMKM;
+    private String deskripsi_UMKM;
+    private String alamat_UMKM;
 
     public User() {
     }
 
-    public User(int id, String username, String password, String nama_UMKM, String deskripsi_UMKM, String alamat_UMKM) {
+    public User(int id, String username, String password, String email, String nama_UMKM, String deskripsi_UMKM, String alamat_UMKM) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.email = email;
         this.nama_UMKM = nama_UMKM;
         this.deskripsi_UMKM = deskripsi_UMKM;
         this.alamat_UMKM = alamat_UMKM;
@@ -34,6 +36,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
