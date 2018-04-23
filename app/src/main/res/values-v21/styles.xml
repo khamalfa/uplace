@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="uplacetheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:statusBarColor">@color/Bleedred</item>
+        <item name="colorPrimary">@color/Bleedred</item>
+        <item name="colorAccent">@color/Bleedred</item>
+    </style>
+</resources>

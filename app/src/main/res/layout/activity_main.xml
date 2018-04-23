@@ -73,14 +73,6 @@
         android:textColor="#ffffff"/>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="532dp" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,6 +91,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="klikDaftar"
         android:text="Daftar"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
