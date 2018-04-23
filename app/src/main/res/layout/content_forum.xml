@@ -9,7 +9,7 @@
         android:id="@+id/tvJudulPosting"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
         android:textSize="18dp"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvJudulPosting" />
 
@@ -39,7 +39,7 @@
         android:text="TextView"
         android:textColor="@android:color/holo_green_light"
         app:layout_constraintEnd_toStartOf="@+id/tv_waktwo"
-        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvIsiPositing" />
 

@@ -13,7 +13,7 @@
         android:background="@color/Bleedred"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-
+        app:titleTextColor="@color/White"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

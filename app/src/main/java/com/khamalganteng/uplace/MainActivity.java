@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void klikLogin(View v){
-        intent = new Intent(this, ForumActivity.class);
+        intent = new Intent(this, Mainmenu.class);
         email = et_mail.getText().toString();
         password = et_password.getText().toString();
         if (!email.isEmpty() && !password.isEmpty()){

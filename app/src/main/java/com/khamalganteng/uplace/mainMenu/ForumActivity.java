@@ -6,6 +6,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TextView;
 
 import com.khamalganteng.uplace.R;
@@ -22,11 +25,16 @@ public class ForumActivity extends AppCompatActivity {
     OpenHelperPosting helperPosting;
     ForumAdapter forumAdapter;
     TextView tvJudulPosting, tvIsiPosting;
+    Toolbar forumToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forum);
+
+        forumToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(forumToolbar);
+
 
         rvForum = (RecyclerView) findViewById(R.id.rvForum);
         rvForum.setHasFixedSize(true);
@@ -54,5 +62,13 @@ public class ForumActivity extends AppCompatActivity {
         rvForum.setAdapter(forumAdapter);
         forumAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.forummenu, menu);
+        return true;
+    }
+
 
 }
