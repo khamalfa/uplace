@@ -66,8 +66,8 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
         final Barang posting = iBarang.get(position);
         holder.tvNama.setText(posting.getNama_BARANG());
         holder.tvDeskripsi.setText(posting.getDeskripsi_BARANG());
-        holder.tvStok.setText(posting.getStok_BARANG());
-        holder.tvHarga.setText(posting.getHarga_BARANG());
+        holder.tvStok.setText(String.valueOf(posting.getStok_BARANG()));
+        holder.tvHarga.setText(String.valueOf(posting.getHarga_BARANG()));
     }
 
     @Override

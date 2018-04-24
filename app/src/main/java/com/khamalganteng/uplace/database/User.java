@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private int saldo;
     private String nama_UMKM;
     private String deskripsi_UMKM;
     private String alamat_UMKM;
@@ -75,5 +76,13 @@ public class User {
 
     public void setAlamat_UMKM(String alamat_UMKM) {
         this.alamat_UMKM = alamat_UMKM;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 }
