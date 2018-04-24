@@ -35,7 +35,8 @@
             android:label="Pencarian"
             android:theme="@style/uplacetheme" />
         <activity android:name=".mainMenu.DanaSayaActivity" />
-        <activity android:name=".Mainmenu"></activity>
+        <activity android:name=".Mainmenu" />
+        <activity android:name=".mainMenu.BarangActivity"></activity>
     </application>
 
 </manifest>
