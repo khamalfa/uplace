@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.BarangAdapter;
@@ -56,5 +57,9 @@ public class BarangActivity extends AppCompatActivity {
         barangAdapter = new BarangAdapter(helperBarang.getBarangList(""), this);
         rvBarang.setAdapter(barangAdapter);
         barangAdapter.notifyDataSetChanged();
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbarbarang);
+        setSupportActionBar(myToolbar);
     }
 }
+

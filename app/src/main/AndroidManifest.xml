@@ -38,8 +38,8 @@
         <activity android:name=".Mainmenu" />
         <activity android:name=".mainMenu.sideMenu.PostActivity" />
         <activity android:name=".mainMenu.ProfileActivity" />
-
-        <activity android:name=".mainMenu.BarangActivity"></activity>
+        <activity android:name=".mainMenu.BarangActivity" />
+        <activity android:name=".mainMenu.sideMenu.TambahBarang"></activity>
     </application>
 
 </manifest>
