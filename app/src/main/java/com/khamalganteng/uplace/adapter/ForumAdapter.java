@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.database.Posting;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> {
@@ -58,7 +61,12 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
         holder.tvJudulPosting.setText(posting.getJudul_POSTING());
         holder.tvIsiPosting.setText(posting.getIsi_POSTING());
         holder.tvPengiPosting.setText(posting.getNama_USER());
-       // holder.tvWaktuPosting.setText(posting.getWaktu_POSTING());
+
+//        Date date = new Date();
+//        date=posting.getWaktu_POSTING();
+//        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+//        holder.tvWaktuPosting.setText("Time: " + dateFormat.format(date));
+
     }
 
     @Override

@@ -36,6 +36,9 @@
             android:theme="@style/uplacetheme" />
         <activity android:name=".mainMenu.DanaSayaActivity" />
         <activity android:name=".Mainmenu" />
+        <activity android:name=".mainMenu.PostActivity" />
+        <activity android:name=".mainMenu.ProfileActivity" />
+
         <activity android:name=".mainMenu.BarangActivity"></activity>
     </application>
 

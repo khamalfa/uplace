@@ -1,5 +1,6 @@
 package com.khamalganteng.uplace.mainMenu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -9,7 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.ForumAdapter;
@@ -69,6 +72,20 @@ public class ForumActivity extends AppCompatActivity {
         inflater.inflate(R.menu.forummenu, menu);
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.mnu_Post:
+                Intent intent2 = new Intent(this, PostActivity.class);
+                startActivity(intent2);
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
 }

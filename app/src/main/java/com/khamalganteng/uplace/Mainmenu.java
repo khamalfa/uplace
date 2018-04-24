@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.khamalganteng.uplace.mainMenu.BarangActivity;
 import com.khamalganteng.uplace.mainMenu.BeritaActivity;
 import com.khamalganteng.uplace.mainMenu.CariActivity;
 import com.khamalganteng.uplace.mainMenu.DanaSayaActivity;
@@ -17,6 +18,7 @@ public class Mainmenu extends AppCompatActivity
     Intent ntent2;
     Intent ntent3;
     Intent ntent4;
+    Intent ntent5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,5 +40,10 @@ public class Mainmenu extends AppCompatActivity
     public void klikCari(View v) {
         ntent4 = new Intent(this, CariActivity.class);
         startActivity(ntent4);
+
+    }
+    public void klikBarang(View v) {
+        ntent5 = new Intent(this, BarangActivity.class);
+        startActivity(ntent5);
     }
 }
