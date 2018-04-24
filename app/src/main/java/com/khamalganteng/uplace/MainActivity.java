@@ -14,8 +14,8 @@ import com.khamalganteng.uplace.mainMenu.ForumActivity;
 public class MainActivity extends AppCompatActivity {
 
     OpenHelperUser openHelperUser;
-    EditText et_mail,et_password;
-    String email,password;
+    EditText et_username,et_password;
+    String username,password;
     Intent intent;
     User user;
 
@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         openHelperUser = new OpenHelperUser(this);
-        openHelperUser.setNewUser(new User("k","qw","lop","a","s","w"));
+//        openHelperUser.setNewUser(new User("k","qw","lop","a","s","w"));
         user = new User();
-        et_mail = (EditText) findViewById(R.id.et_mail);
+        et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
     }
 
@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void klikLogin(View v){
         intent = new Intent(this, Mainmenu.class);
-        email = et_mail.getText().toString();
+        username = et_username.getText().toString();
         password = et_password.getText().toString();
-        if (!email.isEmpty() && !password.isEmpty()){
+        if (!username.isEmpty() && !password.isEmpty()){
 
-            user = openHelperUser.getUser(email,password);
+            user = openHelperUser.getUser(username, password);
 
             if (user != null){
                 startActivity(intent);

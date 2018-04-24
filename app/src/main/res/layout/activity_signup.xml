@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_su_namaUMKM"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tb_daftar" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/et_su_username"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -54,10 +54,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_namaUMKM" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/et_su_email"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -74,10 +74,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_username" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/et_su_password"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -94,10 +94,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_email" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/et_su_password2"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -114,10 +114,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_password" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/et_su_descUMKM"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -133,10 +133,10 @@
         android:paddingTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_password2" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/et_su_alamatUMKM"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
@@ -152,7 +152,7 @@
         android:paddingTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_descUMKM" />
 
     <Button
         android:id="@+id/btn_Lanjut"
@@ -165,10 +165,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/Bleedred"
+        android:onClick="klikLanjut"
         android:text="Lanjut"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText8" />
+        app:layout_constraintTop_toBottomOf="@+id/et_su_alamatUMKM" />
 </android.support.constraint.ConstraintLayout>

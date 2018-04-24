@@ -12,21 +12,6 @@ public class User {
     public User() {
     }
 
-    public User(int id, String username, String password, String email, String nama_UMKM, String deskripsi_UMKM, String alamat_UMKM) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.nama_UMKM = nama_UMKM;
-        this.deskripsi_UMKM = deskripsi_UMKM;
-        this.alamat_UMKM = alamat_UMKM;
-    }
-
-    public User(String email, String password) {
-        this.password = password;
-        this.email = email;
-    }
-
     public User(String username, String password, String email, String nama_UMKM, String deskripsi_UMKM, String alamat_UMKM) {
         this.username = username;
         this.password = password;

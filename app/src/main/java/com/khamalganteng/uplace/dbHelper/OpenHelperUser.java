@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.khamalganteng.uplace.database.Posting;
 import com.khamalganteng.uplace.database.User;
@@ -17,12 +18,13 @@ import java.util.List;
 public class OpenHelperUser extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "user.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 6;
     public static final String TABLE_NAME = "User";
     public static final String COLUMN_ID = "id_user";
+    public static final String COLUMN_USERNAME = "username";
     public static final String COLUMN_EMAIL = "email";
     public static final String COLUMN_PASSWORD = "password";
-    public static final String COLUMN_UMKM_NAME = "username";
+    public static final String COLUMN_UMKM_NAME = "usernameumkm";
     public static final String COLUMN_UMKM_ADDRESS = "alamat";
     public static final String COLUMN_UMKM_DESC = "deskripsi";
 
@@ -39,6 +41,7 @@ public class OpenHelperUser extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(" CREATE TABLE " + TABLE_NAME + " (" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_USERNAME + " TEXT NOT NULL, " +
                 COLUMN_EMAIL + " TEXT NOT NULL, " +
                 COLUMN_PASSWORD + " TEXT NOT NULL, " +
                 COLUMN_UMKM_NAME + " TEXT NOT NULL, " +
@@ -59,6 +62,7 @@ public class OpenHelperUser extends SQLiteOpenHelper {
 
             //temporary value, membungkus data dengan ContentValues
             ContentValues temp = new ContentValues();
+            temp.put(COLUMN_USERNAME, post.getUsername());
             temp.put(COLUMN_EMAIL, post.getEmail());
             temp.put(COLUMN_PASSWORD, post.getPassword());
             temp.put(COLUMN_UMKM_NAME, post.getNama_UMKM());
@@ -72,15 +76,15 @@ public class OpenHelperUser extends SQLiteOpenHelper {
             db.insert(TABLE_NAME, null, temp);
             db.close();
 
-//        Toast.makeText(this, "Deleted successfully.", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(, "Deleted successfully.", Toast.LENGTH_SHORT).show();
 
         }
 
-        public User getUser(String email, String password) {
+        public User getUser(String susername, String spassword) {
 
             String query;
 
-            query = "SELECT * FROM " + TABLE_NAME + " WHERE email LIKE '"+ email + "' AND password LIKE '"  + password +"'";
+            query = "SELECT * FROM " + TABLE_NAME + " WHERE username LIKE '"+ susername + "' AND password LIKE '"  + spassword +"'";
 
             SQLiteDatabase db = this.getWritableDatabase();
             Cursor cursor = db.rawQuery(query, null);
@@ -89,6 +93,7 @@ public class OpenHelperUser extends SQLiteOpenHelper {
             if (cursor.getCount()>0) {
                 cursor.moveToFirst();
                    post.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+                   post.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
                    post.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)));
                    post.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)));
                    post.setNama_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_NAME)));
