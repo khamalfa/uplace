@@ -1,5 +1,5 @@
 
-package com.khamalganteng.uplace.mainMenu;
+package com.khamalganteng.uplace.mainMenu.sideMenu;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

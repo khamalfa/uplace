@@ -12,12 +12,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.ForumAdapter;
 import com.khamalganteng.uplace.database.Posting;
 import com.khamalganteng.uplace.dbHelper.OpenHelperPosting;
+import com.khamalganteng.uplace.mainMenu.sideMenu.PostActivity;
 
 import java.util.Date;
 
