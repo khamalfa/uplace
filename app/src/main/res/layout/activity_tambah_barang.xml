@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.khamalganteng.uplace.mainMenu.sideMenu.TambahBarang">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText5"
+        android:layout_below="@+id/toolbar3"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/boxedittext"
+        android:ems="10"
+        android:hint="Nama Barang"
+        android:inputType="textPersonName"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText4"
+        android:layout_below="@+id/editText4"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/boxedittext"
+        android:ems="10"
+        android:hint="Stok Barang"
+        android:inputType="textPersonName"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText5"
+        android:layout_below="@+id/editText5"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/boxedittext"
+        android:ems="10"
+        android:hint="Harga Barang"
+        android:inputType="textPersonName"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/editText2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/boxedittext"
+        android:ems="10"
+        android:hint="Deskripsi Barang"
+        android:inputType="textMultiLine|textPersonName"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@color/Bleedred"
+        android:text="Button" />
+
+</RelativeLayout>

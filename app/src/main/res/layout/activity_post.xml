@@ -36,9 +36,9 @@
     <EditText
         android:id="@+id/et_Isipost"
         android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/et_Judpost"
         android:layout_marginStart="29dp"
         android:background="@drawable/boxedittext"
         android:ems="10"
