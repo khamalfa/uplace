@@ -37,6 +37,8 @@ public class BarangActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_barang);
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbarbarang);
+        setSupportActionBar(myToolbar);
 
         rvBarang = (RecyclerView) findViewById(R.id.rvBarang);
         rvBarang.setHasFixedSize(true);
@@ -51,7 +53,7 @@ public class BarangActivity extends AppCompatActivity {
         helperBarang = new OpenHelperBarang(this);
 
         //id user pake shared preferences
-        helperBarang.setNewBarang(new Barang(1, "khamal", "MENCARI RENCHAN", 1000,20));
+//        helperBarang.setNewBarang(new Barang(1, "khamal", "MENCARI RENCHAN", 1000,20));
 
         rvBarang.setLayoutManager(layoutManager);
         rvBarang.setItemAnimator(new DefaultItemAnimator());
@@ -64,9 +66,6 @@ public class BarangActivity extends AppCompatActivity {
         barangAdapter = new BarangAdapter(helperBarang.getBarangList(""), this);
         rvBarang.setAdapter(barangAdapter);
         barangAdapter.notifyDataSetChanged();
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbarbarang);
-        setSupportActionBar(myToolbar);
     }
 
     @Override
@@ -89,6 +88,11 @@ public class BarangActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        barangAdapter.notifyDataSetChanged();
+        populateRV();
+    }
 }
 

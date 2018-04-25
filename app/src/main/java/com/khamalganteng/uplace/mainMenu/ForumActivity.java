@@ -1,6 +1,8 @@
 package com.khamalganteng.uplace.mainMenu;
 
 import android.content.Intent;
+import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -50,7 +52,7 @@ public class ForumActivity extends AppCompatActivity {
         helperPosting = new OpenHelperPosting(this);
         String desc= "terakhir ditemukan di balikpapan sandang pangan, dan terlacak oleh kelakuan tidak wajar luvizat wa euy ah " +
                 "bleydeh teu puguh da sia khamal goblog";
-        helperPosting.setNewPosting(new Posting(1,"khamal","MENCARI RENCHAN",desc,new Date()));
+//        helperPosting.setNewPosting(new Posting(1,"khamal","MENCARI RENCHAN",desc,new Date()));
 
         rvForum.setLayoutManager(layoutManager);
         rvForum.setItemAnimator(new DefaultItemAnimator());
@@ -86,6 +88,22 @@ public class ForumActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        forumAdapter.notifyDataSetChanged();
+        populateRV();
 
+    }
+
+//    @Override
+//    public void onPostCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
+//        super.onPostCreate(savedInstanceState, persistentState);
+//        forumAdapter.notifyDataSetChanged();
+//    }
 }

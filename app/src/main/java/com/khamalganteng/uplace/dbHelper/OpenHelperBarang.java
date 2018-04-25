@@ -77,9 +77,9 @@ public class OpenHelperBarang extends SQLiteOpenHelper {
 
     public List<Barang> getBarangList(String filter) {
 
-        String query = "SELECT  * FROM " + TABLE_NAME;
+//        String query = "SELECT  * FROM " + TABLE_NAME;
 
-//        query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ filter;
+        String query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ COLUMN_ID + " DESC";
 
         List<Barang> PostLinkedList = new LinkedList<>();
         SQLiteDatabase db = this.getWritableDatabase();

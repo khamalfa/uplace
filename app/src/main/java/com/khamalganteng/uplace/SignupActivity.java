@@ -55,13 +55,12 @@ public class SignupActivity extends AppCompatActivity {
 
                 if (!username.isEmpty() && !password2.isEmpty() && !email.isEmpty() &&
                         !namaUMKM.isEmpty() && !descUMKM.isEmpty() && !alamatUMKM.isEmpty()){
+
                     ohuser.setNewUser(new User(username,password2,email,namaUMKM,descUMKM,alamatUMKM));
-                    Toast.makeText(getApplicationContext(), username+" aha "+password2, Toast.LENGTH_SHORT).show();
 
                     finish();
 //            startActivity(new Intent(this,MainActivity.class));
                 }else{
-                    Toast.makeText(getApplicationContext(), "MOHON ISI SEMUA FIELD", Toast.LENGTH_SHORT).show();
                     Toast.makeText(getApplicationContext(), "MOHON ISI SEMUA FIELD", Toast.LENGTH_SHORT).show();
                 }
             }

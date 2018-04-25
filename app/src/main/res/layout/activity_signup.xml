@@ -165,7 +165,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/Bleedred"
-        android:onClick="klikLanjut"
         android:text="Lanjut"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"

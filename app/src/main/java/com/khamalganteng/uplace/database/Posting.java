@@ -30,6 +30,13 @@ public class Posting {
         this.waktu_POSTING = waktu_POSTING;
     }
 
+    public Posting(int id_USER, String judul_POSTING, String isi_POSTING, Date waktu_POSTING) {
+        this.id_USER = id_USER;
+        this.judul_POSTING = judul_POSTING;
+        this.isi_POSTING = isi_POSTING;
+        this.waktu_POSTING = waktu_POSTING;
+    }
+
     public Date getWaktu_POSTING() {
         return waktu_POSTING;
     }

@@ -74,7 +74,7 @@ public class OpenHelperPosting extends SQLiteOpenHelper {
 
     public List<Posting> getPostingList(String filter) {
 
-        String query = "SELECT  * FROM " + TABLE_NAME;
+        String query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY " + COLUMN_ID + " DESC";
 
 //        query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ filter;
 
