@@ -25,6 +25,7 @@
         android:layout_marginStart="14dp"
         android:layout_toEndOf="@+id/ivBarang"
         android:text="Nama"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/ivBarang"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,10 +56,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
+        android:layout_alignBottom="@+id/ivBarang"
         android:layout_alignEnd="@+id/tvDeskripsiBarang"
-        android:layout_below="@+id/tvDeskripsiBarang"
+        android:layout_marginEnd="36dp"
         android:gravity="right"
         android:text="Harga"
+        android:textColor="@android:color/holo_green_light"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvStokBarang"
