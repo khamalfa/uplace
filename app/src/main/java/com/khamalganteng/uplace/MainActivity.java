@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 mEditor.putInt("ID_USER",user.getId());
                 mEditor.commit();
             }else{
-                Toast.makeText(this,"SALAH",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Mohon",Toast.LENGTH_SHORT).show();
             }
         }
 
