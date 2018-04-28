@@ -76,10 +76,14 @@ public class OpenHelperBarang extends SQLiteOpenHelper {
     }
 
     public List<Barang> getBarangList(String filter) {
+        String query="";
 
-//        String query = "SELECT  * FROM " + TABLE_NAME;
+        if (filter.isEmpty()){
+            query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ COLUMN_ID + " DESC";
+        }else {
+            query = "SELECT  * FROM " + TABLE_NAME + " WHERE name LIKE '"+filter+"%'";
+        }
 
-        String query = "SELECT  * FROM " + TABLE_NAME + " ORDER BY "+ COLUMN_ID + " DESC";
 
         List<Barang> PostLinkedList = new LinkedList<>();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -95,12 +99,13 @@ public class OpenHelperBarang extends SQLiteOpenHelper {
                 post.setNama_BARANG(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_NAME)));
                 post.setDeskripsi_BARANG(cursor.getString(cursor.getColumnIndex(COLUMN_BARANG_DESC)));
                 post.setHarga_BARANG(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_PRICE)));
-                post.setStok_BARANG(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_PRICE)));
+                post.setStok_BARANG(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_STOCK)));
 
                 PostLinkedList.add(post);
             } while (cursor.moveToNext());
         }
 
+        db.close();
 
         return PostLinkedList;
     }
@@ -126,7 +131,8 @@ public class OpenHelperBarang extends SQLiteOpenHelper {
                 post.setStok_BARANG(cursor.getInt(cursor.getColumnIndex(COLUMN_BARANG_PRICE)));
 
         }
-        
+        db.close();
+
         return post;
     }
 }

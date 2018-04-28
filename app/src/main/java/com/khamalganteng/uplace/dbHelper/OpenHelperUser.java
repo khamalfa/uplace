@@ -104,4 +104,29 @@ public class OpenHelperUser extends SQLiteOpenHelper {
             }
         return post;
         }
+
+    public User getUser(int id) {
+
+        String query;
+
+        query = "SELECT * FROM " + TABLE_NAME + " WHERE id_user = "+ id;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        User post = new User();
+
+        if (cursor.getCount()>0) {
+            cursor.moveToFirst();
+            post.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
+            post.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
+            post.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)));
+            post.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_PASSWORD)));
+            post.setNama_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_NAME)));
+            post.setAlamat_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_ADDRESS)));
+            post.setDeskripsi_UMKM(cursor.getString(cursor.getColumnIndex(COLUMN_UMKM_DESC)));
+        }else{
+            return null;
+        }
+        return post;
+    }
 }

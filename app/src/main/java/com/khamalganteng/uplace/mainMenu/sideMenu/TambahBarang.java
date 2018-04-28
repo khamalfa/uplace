@@ -1,5 +1,6 @@
 package com.khamalganteng.uplace.mainMenu.sideMenu;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -32,6 +33,9 @@ public class TambahBarang extends AppCompatActivity {
         etStok = (EditText) findViewById(R.id.et_tb_stok);
         btn_ok = (Button) findViewById(R.id.btn_tb_ok);
 
+        final SharedPreferences mPreferences = getSharedPreferences("DATA_GLOBAL_UPLACE",MODE_PRIVATE);
+        SharedPreferences.Editor mEditor = mPreferences.edit();
+
         ohBarang = new OpenHelperBarang(this);
 
         btn_ok.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +46,8 @@ public class TambahBarang extends AppCompatActivity {
                 iHarga = Integer.parseInt(etHarga.getText().toString());
                 iStok = Integer.parseInt(etStok.getText().toString());
                 if(!sNama.isEmpty() && !sDeskripsi.isEmpty() && iHarga!=null && iStok != null){
-                    ohBarang.setNewBarang(new Barang(1,sNama,sDeskripsi,iHarga,iStok));
+                    int id = mPreferences.getInt("ID_USER",0);
+                    ohBarang.setNewBarang(new Barang(id,sNama,sDeskripsi,iHarga,iStok));
                     finish();
                 }
             }

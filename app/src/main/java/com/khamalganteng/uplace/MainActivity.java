@@ -1,6 +1,7 @@
 package com.khamalganteng.uplace;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     String username,password;
     Intent intent;
     User user;
+    SharedPreferences mPreferences;
+    SharedPreferences.Editor mEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
         user = new User();
         et_username = (EditText) findViewById(R.id.et_username);
         et_password = (EditText) findViewById(R.id.et_password);
+
+        mPreferences = getSharedPreferences("DATA_GLOBAL_UPLACE",MODE_PRIVATE);
+        mEditor = mPreferences.edit();
     }
 
     public void klikDaftar(View v) {
@@ -46,10 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
             if (user != null){
                 startActivity(intent);
+                mEditor.putInt("ID_USER",user.getId());
+                mEditor.commit();
             }else{
                 Toast.makeText(this,"SALAH",Toast.LENGTH_SHORT).show();
             }
         }
+
+
 
     }
 

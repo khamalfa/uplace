@@ -1,6 +1,7 @@
 
 package com.khamalganteng.uplace.mainMenu.sideMenu;
 
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -36,8 +37,11 @@ public class PostActivity extends AppCompatActivity {
         etIsi = (EditText) findViewById(R.id.et_forum_tambah_isi);
         btnOK = (Button) findViewById(R.id.btn_forum_tambah);
 
+        final SharedPreferences mPreferences = getSharedPreferences("DATA_GLOBAL_UPLACE",MODE_PRIVATE);
+
+
         ohPosting = new OpenHelperPosting(this);
-        id_user=0;
+        id_user= mPreferences.getInt("ID_USER",0);
         sJudul = "";
         sIsi = "";
         final Date a = new Date();
@@ -48,7 +52,7 @@ public class PostActivity extends AppCompatActivity {
                 sJudul = etJudul.getText().toString();
                 sIsi = etIsi.getText().toString();
                 if (!sJudul.isEmpty() && !sIsi.isEmpty()){
-                    ohPosting.setNewPosting(new Posting(1,"khamal",sJudul,sIsi,new Date()));
+                    ohPosting.setNewPosting(new Posting(id_user,"as",sJudul,sIsi,new Date()));
 //                    ohPosting.setNewPosting(new Posting(id_user,sJudul,sIsi,a));
                     finish();
                 }else {

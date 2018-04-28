@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.database.Posting;
+import com.khamalganteng.uplace.database.User;
+import com.khamalganteng.uplace.dbHelper.OpenHelperUser;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,10 +22,12 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
 
     public List<Posting> iPosting;
     Context iContext;
+    OpenHelperUser ohUser;
 
     public ForumAdapter(List<Posting> iPosting, Context iContext) {
         this.iPosting = iPosting;
         this.iContext = iContext;
+        ohUser = new OpenHelperUser(iContext);
     }
 
     public ForumAdapter() {
@@ -58,9 +62,20 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ForumAdapter.ViewHolder holder, int position) {
         final Posting posting = iPosting.get(position);
+        User user = new User();
+
+        if (posting != null){
+        }
+
+        try {
+            user = ohUser.getUser(posting.getId_USER());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         holder.tvJudulPosting.setText(posting.getJudul_POSTING());
         holder.tvIsiPosting.setText(posting.getIsi_POSTING());
-        holder.tvPengiPosting.setText(posting.getNama_USER());
+        holder.tvPengiPosting.setText(user.getUsername());
 
 //        Date date = new Date();
 //        date=posting.getWaktu_POSTING();
