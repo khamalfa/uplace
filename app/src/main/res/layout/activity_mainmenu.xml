@@ -8,49 +8,46 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="113dp"
-        android:layout_height="124dp"
-
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView1"
-        android:layout_marginTop="37dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2"
         android:onClick="klikDana"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_money" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="113dp"
-        android:layout_height="124dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
 
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_alignTop="@+id/imageView4"
+        android:layout_toEndOf="@+id/textView2"
         android:onClick="klikForum"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_forum" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="112dp"
-        android:layout_height="125dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
 
 
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginStart="48dp"
         android:onClick="klikBerita"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_news" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="113dp"
-        android:layout_height="126dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
 
-        android:layout_alignBottom="@+id/imageView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="54dp"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_toEndOf="@+id/imageView7"
         android:onClick="klikCari"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_search_black_24dp" />
@@ -59,11 +56,12 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/imageView3"
-        android:layout_alignStart="@+id/imageView3"
+        android:layout_alignEnd="@+id/imageView"
         android:layout_below="@+id/imageView"
+        android:layout_toEndOf="@+id/textView4"
         android:gravity="center"
         android:text="Dana saya"
+        android:textSize="12sp"
         android:tint="@drawable/mmtintitem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -72,12 +70,12 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_below="@+id/imageView4"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toEndOf="@+id/imageView7"
         android:gravity="center"
         android:text="Pencarian"
+        android:textSize="12sp"
         android:tint="@drawable/mmtintitem" />
 
     <TextView
@@ -85,11 +83,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_alignEnd="@+id/imageView3"
-        android:layout_alignStart="@id/imageView3"
-        android:layout_below="@+id/imageView3"
+        android:layout_alignBaseline="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_toStartOf="@+id/imageView6"
         android:gravity="center"
         android:text="Berita UMKM"
+        android:textSize="12sp"
         android:tint="@drawable/mmtintitem" />
 
     <TextView
@@ -97,44 +97,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_alignBottom="@+id/textView1"
         android:layout_alignEnd="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2"
         android:layout_below="@+id/imageView2"
         android:gravity="center"
         android:text="Forum"
+        android:textSize="12sp"
         android:tint="@drawable/mmtintitem"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="25dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/imageView3"
+        android:layout_toEndOf="@+id/imageView3"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_account" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="113dp"
-        android:layout_height="113dp"
-        android:layout_alignStart="@+id/textView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignTop="@+id/imageView6"
+        android:layout_toEndOf="@+id/imageView6"
         android:onClick="klikBarang"
         android:tint="@drawable/mmtintitem"
         app:srcCompat="@drawable/ic_content_paste" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView3"
+        android:layout_alignEnd="@+id/imageView6"
         android:layout_alignStart="@+id/imageView6"
         android:layout_below="@+id/imageView6"
         android:gravity="center"
-        android:text="Profil" />
+        android:text="Profil"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/textView5"
@@ -144,5 +144,24 @@
         android:layout_alignStart="@+id/imageView7"
         android:layout_below="@+id/imageView6"
         android:gravity="center"
-        android:text="Atur Barang" />
+        android:text="Atur Barang"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="47dp"
+        android:layout_toEndOf="@+id/imageView3"
+        app:srcCompat="@drawable/uc" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView9"
+        android:layout_toEndOf="@+id/imageView9"
+        android:text="TextView"
+        android:textSize="36sp" />
 </RelativeLayout>
