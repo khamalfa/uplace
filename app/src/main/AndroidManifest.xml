@@ -40,7 +40,8 @@
         <activity android:name=".mainMenu.ProfileActivity" />
         <activity android:name=".mainMenu.BarangActivity" />
         <activity android:name=".mainMenu.sideMenu.TambahBarang" />
-        <activity android:name=".mainMenu.sideMenu.BeliActivity"></activity>
+        <activity android:name=".mainMenu.sideMenu.BeliActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>

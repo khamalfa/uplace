@@ -18,7 +18,7 @@ import java.util.List;
 public class OpenHelperUser extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "user.db";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
     public static final String TABLE_NAME = "User";
     public static final String COLUMN_ID = "id_user";
     public static final String COLUMN_USERNAME = "username";
