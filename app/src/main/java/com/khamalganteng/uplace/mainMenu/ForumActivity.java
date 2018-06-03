@@ -13,17 +13,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
+import com.khamalganteng.uplace.ItemClickListener;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.ForumAdapter;
 import com.khamalganteng.uplace.database.Posting;
 import com.khamalganteng.uplace.dbHelper.OpenHelperPosting;
+import com.khamalganteng.uplace.mainMenu.sideMenu.BeliActivity;
+import com.khamalganteng.uplace.mainMenu.sideMenu.DetailPost;
 import com.khamalganteng.uplace.mainMenu.sideMenu.PostActivity;
 
 import java.util.Date;
 
-public class ForumActivity extends AppCompatActivity {
+public class ForumActivity extends AppCompatActivity implements ItemClickListener {
 
     RecyclerView rvForum;
     RecyclerView.LayoutManager layoutManager;
@@ -66,6 +70,7 @@ public class ForumActivity extends AppCompatActivity {
         forumAdapter = new ForumAdapter(helperPosting.getPostingList(""), this);
         rvForum.setAdapter(forumAdapter);
         forumAdapter.notifyDataSetChanged();
+        forumAdapter.setClickListener(this);
     }
 
     @Override
@@ -98,6 +103,13 @@ public class ForumActivity extends AppCompatActivity {
         super.onRestart();
         forumAdapter.notifyDataSetChanged();
         populateRV();
+
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        Intent i = new Intent(this, DetailPost.class);
+        startActivity(i);
 
     }
 

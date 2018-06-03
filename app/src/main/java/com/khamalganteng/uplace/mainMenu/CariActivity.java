@@ -1,5 +1,6 @@
 package com.khamalganteng.uplace.mainMenu;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,11 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.khamalganteng.uplace.ItemClickListener;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.BarangAdapter;
 import com.khamalganteng.uplace.dbHelper.OpenHelperBarang;
+import com.khamalganteng.uplace.mainMenu.sideMenu.BeliActivity;
 
-public class CariActivity extends AppCompatActivity {
+public class CariActivity extends AppCompatActivity implements ItemClickListener {
 
     String keyword;
     EditText etKeyword;
@@ -60,11 +63,18 @@ public class CariActivity extends AppCompatActivity {
         barangAdapter = new BarangAdapter(ohBarang.getBarangList(filter), this);
         rvCari.setAdapter(barangAdapter);
         barangAdapter.notifyDataSetChanged();
+        barangAdapter.setClickListener(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 //        populateRV();
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        Intent i = new Intent(this, BeliActivity.class);
+        startActivity(i);
     }
 }

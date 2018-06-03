@@ -45,8 +45,9 @@
         android:id="@+id/tvStokBarang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvHargaBarang"
+        android:layout_alignBottom="@+id/tvHargaBarang"
         android:layout_alignStart="@+id/tvDeskripsiBarang"
-        android:layout_below="@+id/tvDeskripsiBarang"
         android:text="Stok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivBarang" />

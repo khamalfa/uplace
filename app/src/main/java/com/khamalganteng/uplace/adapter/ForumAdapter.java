@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.khamalganteng.uplace.ItemClickListener;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.database.Posting;
 import com.khamalganteng.uplace.database.User;
@@ -18,11 +19,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> {
+public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder>  {
 
     public List<Posting> iPosting;
     Context iContext;
     OpenHelperUser ohUser;
+    private ItemClickListener clickListener;
 
     public ForumAdapter(List<Posting> iPosting, Context iContext) {
         this.iPosting = iPosting;
@@ -32,7 +34,7 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
 
     public ForumAdapter() {
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView tvJudulPosting;
         public TextView tvIsiPosting;
@@ -44,6 +46,13 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
             tvJudulPosting = (TextView) itemView.findViewById(R.id.tvJudulPosting);
             tvIsiPosting = (TextView) itemView.findViewById(R.id.tvIsiPositing);
             tvPengiPosting = (TextView) itemView.findViewById(R.id.tv_pengirim);
+
+            itemView.setOnClickListener(this); // bind the listener
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
         }
     }
 
@@ -87,5 +96,8 @@ public class ForumAdapter extends RecyclerView.Adapter<ForumAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return iPosting.size();
+    }
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
     }
 }

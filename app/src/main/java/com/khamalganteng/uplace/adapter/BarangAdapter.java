@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.khamalganteng.uplace.ItemClickListener;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.database.Barang;
 import com.khamalganteng.uplace.database.Posting;
@@ -19,7 +20,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
 
     List<Barang> iBarang;
     Context iContext;
-
+    private ItemClickListener clickListener;
 
 
     public BarangAdapter() {
@@ -30,7 +31,7 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
         this.iContext = iContext;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public ImageView ivBarang;
         public TextView tvNama;
@@ -47,6 +48,13 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
             tvHarga = (TextView) itemView.findViewById(R.id.tvHargaBarang);
             tvStok = (TextView) itemView.findViewById(R.id.tvStokBarang);
 
+            itemView.setOnClickListener(this); // bind the listener
+        }
+
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
         }
     }
 
@@ -73,5 +81,8 @@ public class BarangAdapter extends RecyclerView.Adapter<BarangAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return iBarang.size();
+    }
+    public void setClickListener(ItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
     }
 }

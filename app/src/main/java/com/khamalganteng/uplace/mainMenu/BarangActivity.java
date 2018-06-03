@@ -11,21 +11,24 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
+import com.khamalganteng.uplace.ItemClickListener;
 import com.khamalganteng.uplace.R;
 import com.khamalganteng.uplace.adapter.BarangAdapter;
 import com.khamalganteng.uplace.adapter.ForumAdapter;
 import com.khamalganteng.uplace.database.Barang;
 import com.khamalganteng.uplace.dbHelper.OpenHelperBarang;
+import com.khamalganteng.uplace.mainMenu.sideMenu.BeliActivity;
 import com.khamalganteng.uplace.mainMenu.sideMenu.PostActivity;
 import com.khamalganteng.uplace.mainMenu.sideMenu.TambahBarang;
 
 import java.util.Date;
 
-public class BarangActivity extends AppCompatActivity {
+public class BarangActivity extends AppCompatActivity  implements ItemClickListener {
     RecyclerView rvBarang;
     RecyclerView.LayoutManager layoutManager;
     OpenHelperBarang helperBarang;
@@ -65,6 +68,7 @@ public class BarangActivity extends AppCompatActivity {
     public void populateRV(){
         barangAdapter = new BarangAdapter(helperBarang.getBarangList(""), this);
         rvBarang.setAdapter(barangAdapter);
+        barangAdapter.setClickListener(this);
         barangAdapter.notifyDataSetChanged();
     }
 
@@ -93,6 +97,13 @@ public class BarangActivity extends AppCompatActivity {
         super.onRestart();
         barangAdapter.notifyDataSetChanged();
         populateRV();
+    }
+
+    @Override
+    public void onClick(View view, int position)
+    {
+        Intent i = new Intent(this, BeliActivity.class);
+        startActivity(i);
     }
 }
 
