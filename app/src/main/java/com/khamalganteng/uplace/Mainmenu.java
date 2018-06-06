@@ -10,6 +10,7 @@ import com.khamalganteng.uplace.mainMenu.BeritaActivity;
 import com.khamalganteng.uplace.mainMenu.CariActivity;
 import com.khamalganteng.uplace.mainMenu.DanaSayaActivity;
 import com.khamalganteng.uplace.mainMenu.ForumActivity;
+import com.khamalganteng.uplace.mainMenu.ProfileActivity;
 
 
 public class Mainmenu extends AppCompatActivity
@@ -44,6 +45,10 @@ public class Mainmenu extends AppCompatActivity
     }
     public void klikBarang(View v) {
         ntent5 = new Intent(this, BarangActivity.class);
+        startActivity(ntent5);
+    }
+    public void klikProfil(View v) {
+        ntent5 = new Intent(this, ProfileActivity.class);
         startActivity(ntent5);
     }
 }
